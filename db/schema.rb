@@ -10,9 +10,101 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171120150732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "office_id"
+    t.date "date_from"
+    t.date "date_to"
+    t.integer "number_people"
+    t.boolean "accepting"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["office_id"], name: "index_bookings_on_office_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "office_id"
+    t.string "title"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["office_id"], name: "index_messages_on_office_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "size"
+    t.string "address"
+    t.boolean "availability"
+    t.string "city"
+    t.string "type"
+    t.integer "price_per_hour"
+    t.integer "price_per_day"
+    t.integer "price_per_week"
+    t.integer "price_per_month"
+    t.string "description"
+    t.string "facility_standard"
+    t.string "pictures"
+    t.date "available_from"
+    t.date "available_to"
+    t.string "schedule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_offices_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "booking_id"
+    t.integer "rating"
+    t.string "title"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.boolean "provider"
+    t.string "user_name"
+    t.string "job_field"
+    t.string "fist_name"
+    t.string "last_name"
+    t.string "birthday"
+    t.string "address"
+    t.string "phone"
+    t.string "language"
+    t.string "currency"
+    t.string "personal_description"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bookings", "offices"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "messages", "offices"
+  add_foreign_key "messages", "users"
+  add_foreign_key "offices", "users"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
 end
