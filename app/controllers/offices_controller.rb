@@ -22,4 +22,10 @@ class OfficesController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def product_params
+    params.require(:office).permit("#", photo: []) # to be filled
+  end
 end

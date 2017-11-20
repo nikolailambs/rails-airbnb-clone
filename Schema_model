@@ -37,7 +37,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="134" y="279" name="user">
+</datatypes><table x="256" y="273" name="user">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -84,7 +84,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="816" y="118" name="office">
+<table x="722" y="181" name="office">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -141,7 +141,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="421" y="14" name="booking">
+<table x="479" y="26" name="booking">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -172,7 +172,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="144" y="37" name="review">
+<table x="245" y="41" name="review">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -197,7 +197,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="589" y="356" name="message">
+<table x="510" y="322" name="message">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
