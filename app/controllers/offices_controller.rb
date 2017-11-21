@@ -3,7 +3,7 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @offices = Office.where(city: params[:city]).where(size: params[:size])
+
   end
 
   def show
@@ -36,6 +36,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:size, :address, :city, :price, :period, :description, :facility_standard, :available_from, :available_to, photo: []) # to be filled
+    params.require(:office).permit(:size, :address, :city, :price, :period, :description, :facility_standard, :available_from, :available_to, photos: []) # to be filled
   end
 end
