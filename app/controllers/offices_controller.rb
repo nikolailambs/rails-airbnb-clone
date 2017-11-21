@@ -3,7 +3,7 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @offices = Office.find(params[:city, :size]).all
+    @offices = Office.where(city: params[:city]).where(size: params[:size])
   end
 
   def show
@@ -11,9 +11,17 @@ class OfficesController < ApplicationController
   end
 
   def new
+    @office = Office.new
   end
 
   def create
+    @office = Office.new
+
+    if @office.save
+      redirect_to @office
+    else
+      render 'new'
+    end
   end
 
   def edit

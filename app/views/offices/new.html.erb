@@ -1,5 +1,22 @@
-<h1>Offices#new</h1>
-<p>Find me in app/views/offices/new.html.erb</p>
 
+<h2>Add a new office you want to rent</h2>
+
+  <%= simple_form_for @office do |f| %>
+  <%= f.input :size, label: "How big is the office?" %>
+  <%= f.input :address, label: "What is the address of the office?" %>
+  <%= f.input :type, label: "What is the type of the office?" %>
+
+  <div class="price-div">
+    <%= f.input :price  %> <p>per</p><%= f.select :period, collection: ["Hour", "Day", "Week", "Month"] %>
+  </div>
+  <%= f.input :description  %>
+  <%= f.input :facility_standard  %>
+  <div class="availability-div">
+    <%= f.input :available_from  %>
+    <%= f.input :available_to  %>
+  </div>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.submit %>
+<% end %>
 
 <%#= f.input :photo, as: :attachinary %>

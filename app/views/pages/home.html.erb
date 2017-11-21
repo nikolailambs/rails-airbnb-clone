@@ -7,10 +7,10 @@
       <h3>Search for an office to stay</h3>
     </div>
     <div class="search-form">
-      <%= form_for(offices_path, method: :get) do |f| %>
-      <%= f.text_field :city, label: "City", placeholder: "Berlin" %>
-      <%= f.select :size, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" } %>
-      <%= f.submit 'Search' %>
+      <%= form_for(:search, url: offices_path, method: :get) do |f| %>
+        <%= f.text_field :city, label: "City", placeholder: "Berlin" %>
+        <%= f.select :size, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" } %>
+        <%= f.submit 'Search' %>
       <% end %>
     </div>
   </div>
