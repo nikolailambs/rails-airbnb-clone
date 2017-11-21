@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :bookings, except: [:new] do
     resources :reviews, only: [:create]
-    resources :messages, only: [:create]
   end
+
+  resources :messages, only: [:index, :new, :create]
 
   resources :offices do
     resources :bookings, only: [:create]
