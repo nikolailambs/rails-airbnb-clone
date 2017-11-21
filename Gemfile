@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'devise'
+gem 'omniauth-facebook'
 
 # pictures
 gem 'cloudinary', '1.1.7'
