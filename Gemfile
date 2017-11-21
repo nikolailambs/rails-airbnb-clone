@@ -5,6 +5,8 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'faker'
 
+gem 'faker'
+
 # pictures
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

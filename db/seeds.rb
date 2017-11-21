@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# Set up a faker
+
 require 'faker'
 
 
@@ -47,6 +50,7 @@ urls = ['https://cdn.wework.com/locations/image/1e750e4e-6ff3-11e7-88f5-0a636a33
       :period => Faker::Date.forward(23),
       user: u,
      )
+
     o.photo_urls = urls
     o.save!
   end
