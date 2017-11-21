@@ -1,9 +1,11 @@
 
 
 
+
 <div class="index-container">
   <div class="cards">
     <div class="row">
+
 
       <% @offices.each do |office| %>
       <div class="col-xs-12, col-sm-6 col-md-4">
@@ -34,6 +36,7 @@
 
   <% content_for(:after_js) do %>
   <%= javascript_tag do %>
+
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: { id: 'map' } }, function() {
   markers = handler.addMarkers(<%= raw @hash.to_json %>);
@@ -46,6 +49,7 @@ handler.getMap().setZoom(14);
 }
 });
 <% end %>
+
 <% end %>
 
 </div>
