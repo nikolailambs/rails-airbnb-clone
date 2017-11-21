@@ -10,7 +10,6 @@
 
 
 .office-card:hover {
-  margin-top: 2px;
 }
 
 .office-image {
@@ -31,13 +30,8 @@
 
 .office-footer {
   background-color: #FFFFFF;
-}
-
-.office-prices {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 5px 0px;
 }
-
 

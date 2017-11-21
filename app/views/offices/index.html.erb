@@ -1,55 +1,56 @@
 
 
 
-  <div class="main-container padded">
-    <div class="cards">
-      <div class="row">
-        <% @offices.each do |office| %>
-          <div class="col-xs-4">
-            <div class="col-xs-4">
-        <div class="office-card">
-            <div class="office-image"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-            url('<%= cl_image_path office.photo.path, height: 300, width: 400, crop: :fill %>')">
-             <div class="office-name"><%= link_to office.description, office_path(cocktail) %>
-              </div>
-            </div>
 
+<div class="index-container">
+  <div class="cards">
+    <div class="row">
+
+
+      <% @offices.each do |office| %>
+      <div class="col-xs-12, col-sm-6 col-md-4">
+        <div class="office-card">
+          <% main_photo = office.photos[0] %>
+          <div class="office-image"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          url('<%= cl_image_path main_photo.path, height: 300, width: 400, crop: :fill %>')">
+          <div class="office-name"><%= link_to office.description, office_path(office) %>
+          </div>
           <div class="office-footer">
             <div class="office-address">
-              <p>office.address</p>
+              <p> <%= office.address %></p>
             </div>
             <div class="office-prices">
-              <span>office.type</span>
-              <span>€office.price_per_hour per hour</span>
+              <span><%= office.type %></span>
+              <span>€ <%= office.price_per_hour %> per hour</span>
             </div>
           </div>
-
         </div>
       </div>
-        <% end %>
-      </div>
     </div>
-    <div id="map"></div>
+    <% end %>
+
   </div>
+</div>
+<div id="map" class="index-map">
 
   <% content_for(:after_js) do %>
   <%= javascript_tag do %>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
 
-
-    });
-  <% end %>
+  var handler = Gmaps.build('Google');
+  handler.buildMap({ internal: { id: 'map' } }, function() {
+  markers = handler.addMarkers(<%= raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  if (markers.length == 0) {
+  handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
 <% end %>
 
+<% end %>
 
-
+</div>
+</div>
