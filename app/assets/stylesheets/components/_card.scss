@@ -1,0 +1,43 @@
+.office-card {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  padding: 50px;
+  margin: 10px;
+}
+
+
+.office-card:hover {
+  margin-top: 2px;
+}
+
+.office-image {
+  position: relative;
+  background-size: cover;
+  height: 180px;
+}
+
+.office-image {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-weight: thin;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.office-footer {
+  background-color: #FFFFFF;
+}
+
+.office-prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 5px 0px;
+}
+
+
