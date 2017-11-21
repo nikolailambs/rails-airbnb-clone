@@ -1,16 +1,75 @@
-.office-card {
+.card {
+  // height: 175px;
+ text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+ background-size: cover !important;
+  // background-position: center;
+  position: relative;
   background-size: cover;
   background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  margin: 15px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
   color: white;
-  font-size: 35px;
-  text-align: center;
-  padding: 50px;
-  margin: 10px;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description > h2{
+  font-size: 16px;
+  color: white !important;
+  text-decoration: none;
+}
+.card-description p {
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: lighter;
 }
 
-
-.office-card:hover {
+.card-description span {
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: lighter;
 }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  color: white;
+  background: black;
+  opacity: 0;
+}
+.card-link a {
+  color: white;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+// .office-card {
+//   background-size: cover;
+//   background-position: center;
+//   color: white;
+//   font-size: 35px;
+//   text-align: center;
+//   padding: 50px;
+//   margin: 10px;
+// }
+
+
+// .office-card:hover {
+// }
 
 .office-image {
   position: relative;
@@ -28,10 +87,11 @@
   color: white;
 }
 
-.office-footer {
-  background-color: #FFFFFF;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
+// .office-footer {
+//   background-color: #FFFFFF;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: baseline;
+// }
+
 
