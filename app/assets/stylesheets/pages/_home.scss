@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+
+
+.landing-background {
+  background-image: url('../../images/background.jpeg');
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+
+.search-position {
+
+  margin-top: 130px;
+  padding-top: 20px;
+  height: 300px;
+  width: 100%;
+  background-color: white;
+
+  h1 {
+    margin-top: 0;
+  }
+}
+

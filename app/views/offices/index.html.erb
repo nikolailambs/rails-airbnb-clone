@@ -1,6 +1,7 @@
-<h1>Offices#index</h1>
-<p>Find me in app/views/offices/index.html.erb</p>
 
+<%= @offices.each do |office| %>
+  <%= office.city %>
+<% end %>
 <%# if @product.photo? %>
   <%#= cl_image_tag @product.photo.path, width: 200, height: 300, crop: :fill %>
 <%# end %>
