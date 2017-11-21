@@ -23,7 +23,7 @@ count = 0
 urls = ['https://cdn.wework.com/locations/image/1e750e4e-6ff3-11e7-88f5-0a636a339cd2/2016026_South_Station_10th_Floor_Common_Area-2.jpg?auto=format%2Ccompress&dpr=2&ch=DPR%2CWidth&crop=false&fit=crop&w=800&h=600', 'https://cdn.wework.com/locations/image/3b5f7c62-877f-11e7-bee1-0a636a339cd2/20160216_Fine_Arts_LA_-_Members-35.jpg?auto=format%2Ccompress&dpr=2&ch=DPR%2CWidth&crop=false&fit=crop&w=800&h=600', 'https://cdn.wework.com/locations/image/c2ea2652-ea34-11e6-a107-0a488af3e541/20170202_Hackerscher_Markt_Common_Areas-10.jpg?auto=format%2Ccompress&dpr=2&ch=DPR%2CWidth&crop=false&fit=crop&w=450&h=220', 'https://cdn.wework.com/locations/image/e5691e42-b8cc-11e7-a540-0a636a339cd2/20160815_Berlin_Sony_Center_MVDK_-_Common_Area-4.jpg?auto=format%2Ccompress&dpr=2&ch=DPR%2CWidth&crop=false&fit=crop&w=450&h=220', 'https://cdn.wework.com/locations/image/0f5c55fe-c4c9-11e7-be60-0a636a339cd2/20170607_Waterhouse_Sq_Common_Areas-13.jpg?auto=format%2Ccompress&dpr=2&ch=DPR%2CWidth&crop=false&fit=crop&w=450&h=220']
 2.times do |index|
   bool = [true, false]
-  u = User.create(
+  u = User.create!(
     :email  => email[count],
     :encrypted_password => password[count],
     :provider => 'true',
@@ -38,8 +38,8 @@ urls = ['https://cdn.wework.com/locations/image/1e750e4e-6ff3-11e7-88f5-0a636a33
     :currency => ['Euro', 'Dollar', 'Peso'].sample,
     :personal_description => Faker::Lorem.sentence,
     )
-  10.times do |i|
-    o = Office.create(
+  2.times do |i|
+    o = Office.create!(
       :size => Faker::Space.distance_measurement,
       :address => Faker::Address.street_address,
       :availability => bool.sample,
