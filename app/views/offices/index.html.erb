@@ -1,6 +1,5 @@
 
 
-
   <div class="main-container padded">
     <div class="cards">
       <div class="row">
@@ -10,7 +9,7 @@
         <div class="office-card">
             <div class="office-image"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-            url('<%= cl_image_path office.photo.path, height: 300, width: 400, crop: :fill %>')">
+            url('<%= cl_image_path office.photos.path, height: 300, width: 400, crop: :fill %>')">
              <div class="office-name"><%= link_to office.description, office_path(cocktail) %>
               </div>
             </div>
@@ -45,8 +44,6 @@
       } else if (markers.length == 1) {
         handler.getMap().setZoom(14);
       }
-
-
     });
   <% end %>
 <% end %>
