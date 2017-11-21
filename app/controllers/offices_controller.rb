@@ -3,7 +3,7 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @offices = Office.where.not(latitude: nil, longitude: nil)
+    @offices = Office.all #where(city: params[:city], size: params[:size])
 
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
@@ -42,6 +42,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:size, :address, :city, :price, :period, :description, :facility_standard, :available_from, :available_to, photos: []) # to be filled
+    params.require(:office).permit(:size, :address, :city, :price, :period, :description, :facility_standard, :available_from, :available_to, photos: [])
   end
 end
