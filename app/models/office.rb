@@ -5,4 +5,7 @@ class Office < ApplicationRecord
   has_many :messages
   has_many :receive_messages, through: :messages, source: :user
   has_many :user_bookings, through: :bookings, source: :user
+
+  geocoded_by :address
+  after_validation :geocode,  if: :address_changed?
 end
