@@ -1,0 +1,38 @@
+.booking-dates {
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-form {
+  background-color: white;
+  height: 200px;
+  width: 600px;
+  text-align: center;
+}
+
+
+#myCarousel {
+  height: 300px;
+  width: 400px;
+  margin: 40px;
+}
+
+
+.carousel-indicators {
+  bottom: -300px;
+}
+
+.booking_people {
+  display: flex;
+  justify-content: space-between;
+}
+
+.office_overview {
+  margin-bottom: 100px;
+}
+
+
+// .office_booking {
+//   border-radius: 10px;
+//   border: 1px solid grey;
+// }

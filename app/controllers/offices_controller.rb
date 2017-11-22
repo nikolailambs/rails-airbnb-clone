@@ -3,18 +3,31 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    
-    @offices = Office.where({city: params[:city], size: params[:size]})
+    search = params[:search]
+
+    if !search[:address_search].blank?
+      @offices = Office.near(search[:address_search], 20).where(size: search[:size_search])
+    else
+      @offices = Office.all
+    end
 
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
       marker.lng office.longitude
-      marker.infowindow render_to_string(partial: "/offices/map_box", locals: { office: flat })
+      marker.infowindow render_to_string(partial: "/offices/map_box", locals: { office: office })
     end
   end
 
   def show
     @office = Office.find(params[:id])
+    @message = Message.new
+    @booking = Booking.new
+
+    @hash = Gmaps4rails.build_markers([@office]) do |office, marker|
+      marker.lat office.latitude
+      marker.lng office.longitude
+      marker.infowindow render_to_string(partial: "/offices/map_box", locals: { office: office })
+    end
   end
 
   def new
@@ -43,6 +56,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:size, :address, :city, :price, :period, :description, :facility_standard, :available_from, :available_to, photos: [])
+    params.require(:office).permit(:size, :address, :price, :period, :office_type, :description, :facility_standard, :available_from, :available_to, photos: [])
   end
 end

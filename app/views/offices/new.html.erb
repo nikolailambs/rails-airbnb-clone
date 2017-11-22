@@ -8,10 +8,10 @@
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
       <%= simple_form_for @office do |f| %>
-        <%= f.input :size, collection: [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], label: "What is the capacity of your office?" %>
         <%= f.input :address, label: "What is the address of the office?" %>
-        <%= f.input :city %>
-        <%= f.input :type, collection: ["Co-working Space", "Private Rooms", "Team Rooms", "Open office", "Work lounge"] %>
+        <%= f.input :city, label: "In which city is the office located" %>
+        <%= f.input :size, collection: ["1 Person", "1-10 Persons", "10-50 Persons", "50-100 Persons"], label: "What is the capacity of your office?" %>
+        <%= f.input :office_type, collection: ["Co-working Space", "Private Rooms", "Team Rooms", "Open office", "Work lounge"] %>
         <div class="price-div form-inline">
           <%= f.input :price %>
           <p>per</p>

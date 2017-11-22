@@ -1,5 +1,7 @@
-<h3><%= office.name %></h3>
-<%= office.photo[0] %>
+<h3><%= office.description %></h3>
+<%= cl_image_tag office.photos.first.path, width: 100, height: 150, crop: :fill %>
 <br />
 <%= office.address %>
-<%= link_to 'Details', flat_path(office), class: 'btn btn-default' %>
+<br />
+<br />
+<%= link_to 'Details', office_path(office), class: 'btn btn-default' %>

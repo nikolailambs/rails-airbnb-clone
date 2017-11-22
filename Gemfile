@@ -5,13 +5,10 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'faker'
 
-gem 'faker'
-
 # pictures
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
-gem 'coffee-rails'
 
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -35,6 +32,9 @@ gem "gmaps4rails"
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+
+gem 'bootstrap-datepicker-rails'
+
 
 group :development, :test do
   gem 'pry-byebug'
