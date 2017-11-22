@@ -1,8 +1,18 @@
+
 .office-card {
   height: 200px;
   text-shadow: 0 1px 1px rgba(0,0,0,0.1);
   background-size: cover !important;
+
   background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  margin: 15px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
   color: white;
   position: relative;
   margin-top: 15px;
@@ -16,7 +26,25 @@
   top: 10px;
   width: 40px;
   border-radius: 50%;
+
 }
+.card-link:hover {
+  opacity: 0.1;
+}
+
+// .office-card {
+//   background-size: cover;
+//   background-position: center;
+//   color: white;
+//   font-size: 35px;
+//   text-align: center;
+//   padding: 50px;
+//   margin: 10px;
+// }
+
+
+// .office-card:hover {
+// }
 
 .card-category {
   position: absolute;
@@ -52,6 +80,7 @@
   }
 }
 
+
 .card-link {
   position: absolute;
   top: 0;
@@ -63,6 +92,7 @@
   opacity: 0;
   border-radius: 4px;
 }
+
 
 .card-link:hover {
   opacity: 0.1;
