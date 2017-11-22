@@ -18,6 +18,12 @@
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 4px;
+
+  &:hover {
+    .card-description {
+      color: #AA0003;
+    }
+  }
 }
 
 .card-user {

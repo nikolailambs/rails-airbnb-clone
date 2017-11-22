@@ -1,29 +1,89 @@
 
 <div class="container no-margin index-container">
   <div class="cards">
-    <div class="row">
-       <% @offices.each do |office| %>
-       <div class="col-xs-12 col-sm-4">
-        <% main_photo = office.photos[0] %>
-        <div class="office-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
-          <div class="card-category"><%= office.type %></div>
-          <div class="card-description">
-            <h2><%= office.address %></h2>
-            <p>€ <%= office.price %> per hour</p>
-          </div>
-          <%# if office.user.facebook_picture_url %>
-            <%#= image_tag office.user.facebook_picture_url, class: "card-user" %>
-          <%# end %>
-          <%= link_to "", office_path(office), class: "card-link" %>
 
-        </div>
-      </div>
-      <% end %>
+    <div class="form-groupe form-inlin">
+      <p class="filters-period">
+        <label>
+          <input type="radio" name="filter" value="*" checked="checked" /> hourly
+        </label>
+        <label>
+          <input type="radio" name="filter" value=".daily" /> daily
+        </label>
+        <label>
+          <input type="radio" name="filter" value=".weekly" /> weekly
+        </label>
+        <label>
+          <input type="radio" name="filter" value=".monthly" /> monthly
+        </label>
+        <label>
+        </p>
+
+        <p class="filters-price">
+          <input type="radio" name="filter" value="100" /> 1€-100€
+        </label>
+        <label>
+          <input type="radio" name="filter" value="500" /> 100€-500€
+        </label>
+        <label>
+          <input type="radio" name="filter" value="1000" /> 500€+
+        </label>
+      </p>
     </div>
-  </div>
 
-  <div id="map" class="index-map">
-    <% content_for(:after_js) do %>
+   <!--  <div class="filter-offices">
+      <div class="form-groupe form-inlin">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Period
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <div class="radio-price">
+                <label class="radio-inline hide-radio"><input type="radio" name="optradio">hourly</label>
+                <label class="radio-inline hide-radio"><input type="radio" name="optradio">daily</label>
+                <label class="radio-inline hide-radio"><input type="radio" name="optradio">weekly</label>
+                <label class="radio-inline hide-radio"><input type="radio" name="optradio">monthly</label>
+              </div>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Price
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <div class="radio-price">
+                  <label class="radio-inline hide-radio"><input type="radio" name="optradio">1€-100€</label>
+                  <label class="radio-inline hide-radio"><input type="radio" name="optradio">100€-500€</label>
+                  <label class="radio-inline hide-radio"><input type="radio" name="optradio">500€+</label>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="row">
+         <% @offices.each do |office| %>
+         <div class="col-xs-12 col-sm-4">
+          <% main_photo = office.photos[0] %>
+          <div class="office-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
+            <div class="card-category"><%= office.office_type %></div>
+            <div class="card-description">
+              <h2><%= office.address %></h2>
+              <div class="price-and-period inline-items">
+                <p>€ </p><p id="price-tag"><%= office.price %></p><p> per </p><p id="period-tag">hour</p>
+              </div>
+            </div>
+            <% if office.user %>
+            <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
+            <% end %>
+            <%= link_to "", office_path(office), class: "card-link" %>
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="map" class="index-map">
+      <% content_for(:after_js) do %>
       <%= javascript_tag do %>
       var handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map' } }, function() {
@@ -34,10 +94,10 @@
       handler.getMap().setZoom(2);
     } else if (markers.length == 1) {
     handler.getMap().setZoom(14);
-    }
-    });
-    <% end %>
-  <% end %>
-  </div>
+  }
+});
+<% end %>
+<% end %>
+</div>
 
 </div>
