@@ -68,13 +68,13 @@
             <div class="card-description">
               <h2><%= office.address %></h2>
               <div class="price-and-period inline-items">
-                <p>€ </p><p id="price-tag"><%= office.price %></p><p> per </p><p id="period-tag">hour</p>
+                <p>€ <%= office.price %> per hour</p>
               </div>
             </div>
-            <% if office.user %>
-            <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
-            <% end %>
-            <%= link_to "", office_path(office), class: "card-link" %>
+              <% if office.user %>
+              <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
+              <% end %>
+              <%= link_to "", office_path(office), class: "card-link" %>
 
           </div>
         </div>
