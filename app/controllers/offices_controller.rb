@@ -4,12 +4,12 @@ class OfficesController < ApplicationController
 
   def index
 
-    @offices = Office.all #where({city: params[:city], size: params[:size]})
+    @offices = Office.where({city: params[:city], size: params[:size]})
 
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
       marker.lng office.longitude
-      # marker.infowindow render_to_string(partial: "/offices/map_box", locals: { office: flat })
+      marker.infowindow render_to_string(partial: "/offices/map_box", locals: { office: flat })
     end
   end
 
