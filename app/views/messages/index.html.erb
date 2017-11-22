@@ -1,25 +1,29 @@
 <div class ="container">
-<h2> Messages </h2>
-  <ul class="inbox">
-    <% @messages.each do |message| %>
-  <li class="message">
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/henriettefl">
-      <div class="message-name">
-        <h3><%= message.user.user_name %></h3> <!-- sender -->
-      </div>
-      <div class="message-body">
-        <p><strong> <%= message.title %></strong></p> <!-- message header -->
-        <p>
-          <%= message.content[0,20] + "..." %> <!-- message first line -->
-        </p>
-        <%= link_to '', message_path(message) %>
-      </div>
-  </li>
-    <% end %>
+  <h2> Your messages </h2>
+  <div class="tabs"> Inbox </div>
+    <ul class="inbox">
+      <% @messages.each do |message| %>
+        <% if message.user_id != message.office.user_id %>
+          <li class="message">
+              <% avatar_url = message.user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <%= image_tag avatar_url, class: "avatar-large" %>
+              <div class="message-name">
+                <h3><%= message.user.user_name %></h3> <!-- sender -->
+                <p><%= message.created_at.strftime("%Y-%m-%d") %></p>
+              </div>
+              <div class="message-body">
+                <p><strong> <%= message.title %></strong></p> <!-- message header -->
+                <p>
+                  <%= link_to message.content[0,20] + "...", message_path(message) %> <!-- message first line -->
+                </p>
+              </div>
+          </li>
+        <% end %>
+      <% end %>
 
-    <!--   <div class="message-status"> -->
-     <!--  <p class="status pending"> </p>  --><!-- status, ie. pending, solved -->
-     <!-- <p class="price"><%#= @message.receive_messages.price %></p> --> <!-- price -->
-     <!-- </div> -->
-  </ul>
+      <!--   <div class="message-status"> -->
+       <!--  <p class="status pending"> </p>  --><!-- status, ie. pending, solved -->
+       <!-- <p class="price"><%#= @message.receive_messages.price %></p> --> <!-- price -->
+       <!-- </div> -->
+    </ul>
 </div>
