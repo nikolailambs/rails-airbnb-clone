@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div class="row">
+  <div class="row top-buffer">
     <div class="col-xs-12 col-md-6">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -50,10 +50,10 @@
         </div>
       </div>
       <div class="office_booking">
-         <%= simple_form_for bookings_path do |f| %>
+         <%= simple_form_for @booking do |f| %>
       <div class="booking-dates">
-        <%= f.input :date_from, as: :date %>
-        <%= f.input :date_to, as: :date %>
+        <%= f.input :date_from, as: :string, input_html: { class: 'datepicker' } %>
+        <%= f.input :date_to, as: :string, input_html: { class: 'datepicker' } %>
       </div>
       <div class="booking_people">
         <%= f.input :number_people, collection: 1..100, label: "Number of people", selected: 1 %>
@@ -63,8 +63,15 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class="row top-buffer">
 
 <div id="map" class="index-map"></div>
 
