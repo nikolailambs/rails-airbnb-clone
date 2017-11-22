@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(version: 20171122110921) do
     t.string "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price"
-    t.string "period"
     t.float "latitude"
     t.float "longitude"
+    t.integer "price"
+    t.string "period"
     t.index ["user_id"], name: "index_offices_on_user_id"
   end
 
