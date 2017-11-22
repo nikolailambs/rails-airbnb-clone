@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :offices
   has_many :booked_offices, through: :bookings, source: :office
-  has_many :office_messages, through: :messages, source: :office
+  has_many :office_messages, through: :messages, source: :office # from provider to user
   has_many :booking_reviews, through: :reviews, source: :bookings
 
   devise :omniauthable, omniauth_providers: [:facebook]
