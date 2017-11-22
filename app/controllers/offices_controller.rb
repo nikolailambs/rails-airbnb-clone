@@ -11,7 +11,6 @@ class OfficesController < ApplicationController
       @offices = Office.all
     end
 
-
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
       marker.lng office.longitude
@@ -21,6 +20,13 @@ class OfficesController < ApplicationController
 
   def show
     @office = Office.find(params[:id])
+    @message = Message.new
+    @booking = Booking.new
+
+    @hash = Gmaps4rails.build_markers(@office) do |office, marker|
+      marker.lat office.latitude
+      marker.lng office.longitude
+    end
   end
 
   def new
