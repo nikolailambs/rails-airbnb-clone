@@ -1,37 +1,99 @@
+
 .office-card {
-  background-size: cover;
+  height: 200px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  background-size: cover !important;
+
   background-position: center;
-  color: white;
-  font-size: 35px;
-  text-align: center;
-  padding: 50px;
-  margin: 10px;
-}
-
-
-.office-card:hover {
-}
-
-.office-image {
-  position: relative;
-  background-size: cover;
-  height: 180px;
-}
-
-.office-image {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  font-weight: thin;
-  font-size: 18px;
-  letter-spacing: 1px;
-  color: white;
-}
-
-.office-footer {
-  background-color: #FFFFFF;
+  height: 150px;
+  border-radius: 1px;
+  margin: 15px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
+  color: white;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
 }
 
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+// .office-card {
+//   background-size: cover;
+//   background-position: center;
+//   color: white;
+//   font-size: 35px;
+//   text-align: center;
+//   padding: 50px;
+//   margin: 10px;
+// }
+
+
+// .office-card:hover {
+// }
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding-left: 4px;
+  background-color: rgba(250, 250, 250, 0.8);
+  height: 40%;
+  color: #343535;
+  box-shadow: 0 -5px 5px -5px #333;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  h2 {
+    font-size: 17px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.7;
+    font-weight: lighter;
+  }
+}
+
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+  border-radius: 4px;
+}
+
+
+.card-link:hover {
+  opacity: 0.1;
+}

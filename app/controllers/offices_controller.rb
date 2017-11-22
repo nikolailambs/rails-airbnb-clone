@@ -3,7 +3,7 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
+    
     @offices = Office.where({city: params[:city], size: params[:size]})
 
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
