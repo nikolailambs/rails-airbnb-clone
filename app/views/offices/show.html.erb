@@ -6,9 +6,9 @@
     <% end %>
   </div>
   <div class="user-card">
-    <% if @office.user.facebook_picture_url %>
-    <%= image_tag @office.user.facebook_picture_url%>
-    <% end %>
+    <%# if @office.user.facebook_picture_url %>
+      <%#= image_tag @office.user.facebook_picture_url%>
+    <%# end %>
     <%= @office.user.first_name + " " + @office.user.last_name %>
     <%= @office.user.job_field %>
   </div>
@@ -26,3 +26,4 @@
   </div>
 </div>
 </div>
+
