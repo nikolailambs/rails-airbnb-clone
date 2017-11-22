@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121150113) do
+ActiveRecord::Schema.define(version: 20171122110921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20171121150113) do
     t.string "address"
     t.boolean "availability"
     t.string "city"
-    t.string "type"
+    t.string "office_type"
     t.integer "price_per_hour"
     t.integer "price_per_day"
     t.integer "price_per_week"

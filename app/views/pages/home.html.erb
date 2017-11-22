@@ -8,8 +8,8 @@
     </div>
     <div class="search-form">
       <%= form_for(:search, url: offices_path, method: :get) do |f| %>
-        <%= f.text_field :city, label: "City", placeholder: "Berlin" %>
-        <%= f.select :size, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" } %>
+        <%= f.text_field :address_search, label: "Address", placeholder: "Friedrichstr. 24, Berlin" %>
+        <%= f.select :size_search, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" } %>
         <%= f.submit 'Search' %>
       <% end %>
     </div>
