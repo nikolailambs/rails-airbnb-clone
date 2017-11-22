@@ -3,6 +3,7 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    #dummy
     search = params[:search]
 
     if !search[:address_search].blank?
