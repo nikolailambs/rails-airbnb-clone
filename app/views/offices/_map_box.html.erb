@@ -1,5 +1,5 @@
-<h3><%= office.name %></h3>
-<%= office.photo[0] %>
+<h3><%= office.description %></h3>
+<%= office.photos[0] %>
 <br />
 <%= office.address %>
-<%= link_to 'Details', flat_path(office), class: 'btn btn-default' %>
+<%= link_to 'Details', office_path(office), class: 'btn btn-default' %>

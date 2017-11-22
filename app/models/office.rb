@@ -6,6 +6,12 @@ class Office < ApplicationRecord
   has_many :receive_messages, through: :messages, source: :user
   has_many :user_bookings, through: :bookings, source: :user
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode,  if: :address_changed?
+
+  def full_address
+    [address, city].join(', ')
+  end
 end
+
+
