@@ -30,8 +30,8 @@
   top: 10px;
   width: 40px;
   border-radius: 50%;
-
 }
+
 .card-link:hover {
   opacity: 0.1;
 }
@@ -70,7 +70,6 @@
   }
 }
 
-
 .card-link {
   position: absolute;
   top: 0;
@@ -83,28 +82,9 @@
   border-radius: 4px;
 }
 
-
 .card-link:hover {
   opacity: 0.1;
 }
-
-
-
-
-/* ---- isotope ---- */
-
-.grid {
-  border: 0px solid #333;
-}
-
-/* clear fix */
-.isotope:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-
 
 
 
