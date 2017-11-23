@@ -8,6 +8,8 @@
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
       <%= simple_form_for @office do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description  %>
         <%= f.input :address, label: "What is the address of the office?" %>
         <%= f.input :city, label: "In which city is the office located" %>
         <%= f.input :size, collection: ["1 Person", "1-10 Persons", "10-50 Persons", "50-100 Persons"], label: "What is the capacity of your office?" %>
@@ -17,7 +19,6 @@
           <p>per</p>
           <%= f.select :period, collection: ["Hour", "Day", "Week", "Month"] %>
         </div>
-        <%= f.input :description  %>
         <%= f.input :facility_standard  %>
         <div class="availability-div">
           <%= f.input :available_from  %>
