@@ -48,36 +48,11 @@
           <div class="card-category"><%= office.office_type %></div>
           <div class="card-description">
             <h5><%= office.address %></h5>
-
-              <p class="price-tag"><%= office.price %>€ per hour</p>
-
+            <p class="price-tag"><%= office.price %>€ per hour</p>
           </div>
           <% if office.user %>
           <% avatar_url = office.user.facebook_picture_url || office.user.avatar %>
           <%= image_tag avatar_url, class: "card-user" %>
-          <% end %>
-          <%= link_to "", office_path(office), class: "card-link" %>
-        </div>
-
-    <div class="grid">
-      <div class="row">
-       <% @offices.each do |office| %>
-       <div class="col-xs-12 col-md-4">
-        <% main_photo = office.photos[0] %>
-        <div class="office-card" data-price="<%= office.price %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
-          <div class="card-category"><%= office.office_type %></div>
-          <div class="card-description">
-            <h5><%= office.address %></h5>
-            <p class="price-tag"><%= office.price %>€ per hour</p>
-          </div>
-          <div>
-            <% if office.user.facebook_picture_url %>
-            <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
-            <% end %>
-            <%= link_to "", office_path(office), class: "card-link" %>
-          </div>
-          <% if office.user.facebook_picture_url %>
-          <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
           <% end %>
           <%= link_to "", office_path(office), class: "card-link" %>
         </div>
