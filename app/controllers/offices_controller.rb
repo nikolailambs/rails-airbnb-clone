@@ -4,14 +4,18 @@ class OfficesController < ApplicationController
 
   def index
     #dummy
-    search = params[:search]
 
-    if !search[:address_search].blank?
-      @offices = Office.near(search[:address_search], 20).where(size: search[:size_search])
+    if params.has_key?(:search)
+      search = params[:search]
+
+      if !search[:address_search].blank?
+        @offices = Office.near(search[:address_search], 20).where(size: search[:size_search])
+      else
+        @offices = Office.all
+      end
     else
       @offices = Office.all
     end
-
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
       marker.lng office.longitude
@@ -23,6 +27,11 @@ class OfficesController < ApplicationController
     @office = Office.find(params[:id])
     @message = Message.new
     @booking = Booking.new
+
+    if params[:booking]
+      @booking.attributes = booking_params
+      @invalid = !@booking.valid?
+    end
 
     @hash = Gmaps4rails.build_markers([@office]) do |office, marker|
       marker.lat office.latitude

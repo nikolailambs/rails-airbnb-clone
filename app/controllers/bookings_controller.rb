@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render office_path(@booking.office)
+      redirect_to office_path(@office, booking: booking_params)
     end
   end
 
@@ -28,9 +28,5 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def booking_params
-    params.require(:booking).permit(:date_from, :date_to, :number_people, :user_id, :office_id)
   end
 end
