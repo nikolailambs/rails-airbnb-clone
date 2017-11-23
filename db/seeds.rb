@@ -88,7 +88,6 @@ booking = Booking.create!(
   :date_to => '09.12.2017',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o.id,
   :user_id => u_one.id,
   )
@@ -98,7 +97,6 @@ booking = Booking.create!(
   :date_to => '20.11.2017',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o.id,
   :user_id => u_one.id,
   )

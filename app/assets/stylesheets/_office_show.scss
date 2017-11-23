@@ -67,6 +67,7 @@
   z-index: 2;
   background: black;
   opacity: 0;
+  transition: background 0.3s ease;
 }
 .banner-link:hover {
   opacity: 0.1;
@@ -107,6 +108,7 @@
   font-weight: bold;
   color: black;
   border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 .yellow-btn:hover {
