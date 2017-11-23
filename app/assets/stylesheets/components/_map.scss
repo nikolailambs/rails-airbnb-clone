@@ -12,3 +12,28 @@
 .content {
   display: flex;
 }
+
+.gm-style-iw {
+
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    background-color: #F2BB05;
+    font-weight: bold;
+    color: black;
+    border-radius: 4px;
+  }
+
+  .btn:hover {
+    background-color: #F2BB05;
+    opacity: 0.6;
+    box-shadow: 0 0 2px #4D4D4D;
+    color: white;
+  }
+
+  img {
+    border-radius: 4px;
+    margin: 5px;
+  }
+}
