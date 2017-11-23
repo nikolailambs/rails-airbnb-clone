@@ -7,12 +7,9 @@
   padding-bottom: 230px;
   border: 1px #dce0e0 solid !important;
   margin-bottom: 0;
-  &:hover {
-    .card-description {
-      color: #AA0003;
-    }
+  text-align: center;
+  position: relative;
   }
-}
 
 .booking-card-user {
   position: relative;
