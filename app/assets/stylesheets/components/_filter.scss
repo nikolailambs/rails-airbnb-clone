@@ -1,0 +1,23 @@
+.filter-card {
+  background-color: white;
+  border: 1px solid #C9C9C9;
+  box-shadow: 1px 1px 2px #6F6F6F;
+  padding: 10px;
+  border-radius: 4px;
+
+  input {
+    display: none;
+  }
+
+  .filters-period {
+    border-bottom: 1px solid #C9C9C9;
+  }
+
+  /*.filters-period .filters-price {
+    height: 50%;
+  }*/
+
+  .label {
+    padding: 0 10px;
+  }
+}

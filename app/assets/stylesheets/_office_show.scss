@@ -1,17 +1,21 @@
+
+.office-booking {
+  border: 1px solid #C9C9C9;
+  border-radius: 4px;
+  padding: 50px 20px;
+  background-color: rgba(250, 250, 250, 0.8);
+}
+
 .booking-dates {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
-
-
-
 
 #myCarousel {
   // height: 250px;
   // width: 80%;
 }
-
-
 
 .carousel-inner > .item > img {
     margin: 0 auto;
@@ -28,9 +32,6 @@
   margin-top: 100px;
   position:relative
 }
-
-
-
 
 //banner CSS
 
@@ -101,8 +102,25 @@
   height: 400px;
 }
 
+.yellow-btn {
+  background-color: #F2BB05;
+  font-weight: bold;
+  color: black;
+  border-radius: 4px;
+}
 
+.yellow-btn:hover {
+  background-color: #F2BB05;
+  opacity: 0.6;
+  box-shadow: 0 0 2px #4D4D4D;
+  color: white;
+}
 
+.no-border {
+  border: none;
+}
 
-
-
+.booking-btn {
+  padding: 10px 20px;
+  margin: 5px;
+}

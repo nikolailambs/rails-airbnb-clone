@@ -9,9 +9,9 @@
     <div class="search-form">
       <%= form_for(:search, url: offices_path, method: :get) do |f| %>
       <i class="fa fa-search magnifying-glass" aria-hidden="true"></i>
-        <%= f.text_field :address_search, label: "Address", placeholder: "Friedrichstr. 24, Berlin", class: "yellow-grey search-input" %>
-        <%= f.select :size_search, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" }, class: "yellow-grey" %>
-        <%= f.submit 'Search', class: "yellow-grey search-btn-landing" %>
+        <%= f.text_field :address_search, label: "Address", placeholder: "Friedrichstr. 24, Berlin", class: "blue-grey search-input" %>
+        <%= f.select :size_search, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" }, class: "blue-grey" %>
+        <%= f.submit 'Search', class: "yellow-btn search-btn-landing" %>
       <% end %>
     </div>
   </div>
