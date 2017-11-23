@@ -18,9 +18,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # @office = params[:message][:office_id]
-    @message = Message.new(message_params)
 
+    @message = Message.new(message_params)
     @message.user = current_user
 
     if @message.save

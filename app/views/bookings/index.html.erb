@@ -1,28 +1,16 @@
-<div class="no-margin index-container">
-  <ul>
-    <li>
-      <div class="tabs">
-        <% @bookings.each do |booking| %>
-        <% if booking.date_from >= Date.today %>
-        <h1> Your upcoming bookings </h1>
-      </div>
-    </li>
-    <li>
-      <%= render "booking_card", booking: booking %>
-      <% end %>
-      <% end %>
-    </li>
-    <li>
-      <div class="tabs">
-        <% @bookings.each do |booking| %>
-        <% if booking.date_from < Date.today %>
-        <h1> Your ended bookings </h1>
-      </div>
-    </li>
-    <li>
-      <%= render "booking_card", booking: booking %>
-      <% end %>
-      <% end %>
-    </li>
-  </ul>
+<div class="div">
+  <div class="space-top-8">
+    <% @bookings.each do |booking| %>
+    <% if booking.date_from >= Date.today %>
+    <h1> Your upcoming bookings </h1>
+    <%= render "booking_card", booking: booking %>
+    <% end %>
+    <% end %>
+    <% @bookings.each do |booking| %>
+    <% if booking.date_from < Date.today %>
+    <h1> Your ended bookings </h1>
+    <%= render "booking_card", booking: booking %>
+    <% end %>
+    <% end %>
+  </div>
 </div>
