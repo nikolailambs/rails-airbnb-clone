@@ -18,14 +18,15 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @office = Office.find(params[:id])
+    # @office = params[:message][:office_id]
     @message = Message.new(message_params)
+
     @message.user = current_user
 
     if @message.save
       redirect_to messages_path
     else
-      render office_path(@office)
+      redirect_to office_path(@message.office)
     end
   end
 
@@ -42,7 +43,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:title, :content, office_messages_attributes: [:user_name], receive_messages_attributes: [:price, :user.user_name,])
+    params.require(:message).permit(:title, :content, :user_id, :office_id)
   end
 
   def set_message
