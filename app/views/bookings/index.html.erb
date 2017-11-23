@@ -1,16 +1,26 @@
 <div class="div">
   <div class="space-top-8">
-    <% @bookings.each do |booking| %>
-    <% if booking.date_from >= Date.today %>
-    <h1> Your upcoming bookings </h1>
-    <%= render "booking_card", booking: booking %>
-    <% end %>
-    <% end %>
-    <% @bookings.each do |booking| %>
-    <% if booking.date_from < Date.today %>
-    <h1> Your ended bookings </h1>
-    <%= render "booking_card", booking: booking %>
-    <% end %>
-    <% end %>
+    <div class="booking-cards">
+      <div class="container-fluid">
+        <div class="row">
+          <h1> Your upcoming bookings </h1>
+          <% @bookings.select { |booking| booking.date_from >= Date.today }.each do |booking| %>
+
+          <%= render "booking_card", booking: booking %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="booking-cards">
+      <div class="container-fluid">
+        <div class="row">
+          <h1> Your ended bookings </h1>
+          <% @bookings.select { |booking| booking.date_from < Date.today }.each do |booking| %>
+          <%= render "booking_card", booking: booking %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
