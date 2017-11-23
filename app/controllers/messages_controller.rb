@@ -19,8 +19,8 @@ class MessagesController < ApplicationController
   def create
 
     @message = Message.new(message_params)
-    @message.offices.build # user model
-    @message.users.build # office model
+    # @message.office.build # user model
+    # @message.user.build # office model
 
     if @message.save
       redirect_to messages_path

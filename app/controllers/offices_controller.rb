@@ -13,14 +13,17 @@ class OfficesController < ApplicationController
       else
         @offices = Office.all
       end
+
     else
       @offices = Office.all
     end
+
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
       marker.lng office.longitude
       marker.infowindow render_to_string(partial: "/offices/map_box", locals: { office: office })
     end
+
   end
 
   def show
@@ -67,6 +70,6 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:name, :size, :address, :price, :period, :office_type, :description, :facility_standard, :available_from, :available_to, photos: [])
+    params.require(:office).permit(:name, :city, :size, :address, :price, :period, :office_type, :description, :facility_standard, :available_from, :available_to, photos: [])
   end
 end
