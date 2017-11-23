@@ -19,10 +19,11 @@
 .index-map {
   height: calc(100vh - 70px);
 
-.filter-card {
-  padding: 10px;
-  border: 1px solid #C9C9C9;
-  box-shadow: 1px 1px 1px #B7C0C7;
-  border-radius: 4px;
-  background-color: white;
+  .filter-card {
+    padding: 10px;
+    border: 1px solid #C9C9C9;
+    box-shadow: 1px 1px 1px #B7C0C7;
+    border-radius: 4px;
+    background-color: white;
+  }
 }

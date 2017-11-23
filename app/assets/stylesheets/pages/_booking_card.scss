@@ -11,9 +11,11 @@
   height: auto;
   padding-bottom: 230px;
   border: 1px #dce0e0 solid !important;
+
   &:hover {
     .card-description {
       color: #AA0003;
+    }
   }
 }
 
@@ -24,8 +26,8 @@
   top: 10px;
   width: 40px;
   border-radius: 50%;
-
 }
+
 .card-link:hover {
   opacity: 0.1;
 }
