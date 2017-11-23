@@ -32,6 +32,7 @@
 
 .search-btn-landing {
   padding: 5px 15px;
+  transition: background 0.3s ease;
   &:hover {
     box-shadow: 0px 0px 2px #26547C;
     color: #162E44;

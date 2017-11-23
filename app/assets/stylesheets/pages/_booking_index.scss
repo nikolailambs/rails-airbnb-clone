@@ -2,6 +2,7 @@
 .space-top-8 {
   margin-top: 100px;
   text-align: center;
+  display: block;
   h1 {
     border-bottom: 3px #F2BB05 solid;
     font-family: 'Abril Fatface';
@@ -10,3 +11,11 @@
   }
 }
 
+.booking-cards {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
