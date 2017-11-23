@@ -15,6 +15,7 @@ require 'faker'
 User.destroy_all
 Office.destroy_all
 Message.destroy_all
+Booking.destroy_all
 
 # email = ["admin@a.de", "test@t.de"]
 # password = ["123456", "testtest"]
@@ -65,6 +66,7 @@ o = Office.create!(
   :facility_standard => 'premium',
   :period => Faker::Date.forward(23),
   :user_id => u_two.id,
+  :photo_urls => ['https://s-i.huffpost.com/gen/2938360/images/n-OFFICE-628x314.jpg', 'https://s7d4.scene7.com/is/image/roomandboard/parsons_189554_17e_g?$str_g$&size=760,480&scl=1', 'https://www.trabahomes.com/wp-content/uploads/2016/10/Astonishing-Swivel-Chair-Coupled-with-Minimalist-Modern-Office-Desk-Completed-with-Curved-Table-Lamp.jpg'],
  )
 
 m_one = Message.create!(
@@ -79,4 +81,24 @@ m_two = Message.create!(
   :content => Faker::Lorem.sentence,
   :user_id => u_two.id,
   :office_id => o.id,
+  )
+
+booking = Booking.create!(
+  :date_from => '23.11.2017',
+  :date_to => '09.12.2017',
+  :number_people => 10,
+  :accepting => true,
+  :note => 'Please non smoking',
+  :office_id => o.id,
+  :user_id => u_one.id,
+  )
+
+booking = Booking.create!(
+  :date_from => '11.11.2017',
+  :date_to => '20.11.2017',
+  :number_people => 10,
+  :accepting => true,
+  :note => 'Please non smoking',
+  :office_id => o.id,
+  :user_id => u_one.id,
   )

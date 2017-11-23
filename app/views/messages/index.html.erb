@@ -5,7 +5,7 @@
       <% @messages.each do |message| %>
         <% if message.user_id != message.office.user_id %>
           <li class="message">
-              <% avatar_url = message.user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <% avatar_url = message.user.facebook_picture_url || message.user.avatar %>
               <%= image_tag avatar_url, class: "avatar-large" %>
               <div class="message-name">
                 <h3><%= message.user.user_name %></h3> <!-- sender -->

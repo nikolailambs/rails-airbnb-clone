@@ -1,0 +1,26 @@
+<div class="cards">
+  <div class="grid">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <% main_photo = booking.office.photos[0] %>
+        <div class="booking-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag main_photo.path, crop: :fill %>');">
+
+          <div class="card-category"><%= booking.office.city %></div>
+          <div class="card-description">
+            <h4><%= booking.date_from %> - <%= booking.date_to %></h4>
+            <h4><%#= booking.office.type %></h4>
+            <div class="booking_details">
+              <h4><%= booking.number_people %></h4>
+              <h4 class="accepted">Accepted</h4>
+              <p><%= link_to "Further details", office_path(booking.office) %></p>
+            </div>
+          </div>
+          <% if booking.office.user %>
+          <%= image_tag booking.office.user.avatar, class: "card-user" %>
+          <% end %>
+          <%= link_to "", office_path(booking.office), class: "card-link" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,4 +35,9 @@ class User < ApplicationRecord
   end
 
 
+  def avatar
+    self.facebook_picture_url || "https://api.adorable.io/avatars/285/#{self.email}.png"
+  end
+
+
 end
