@@ -48,7 +48,8 @@
 
               </div>
               <% if office.user %>
-              <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
+              <% avatar_url = office.user.facebook_picture_url || office.user.avatar %>
+              <%= image_tag avatar_url, class: "card-user" %>
               <% end %>
               <%= link_to "", office_path(office), class: "card-link" %>
             </div>

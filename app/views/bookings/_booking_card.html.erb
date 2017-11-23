@@ -3,7 +3,7 @@
   <div class="booking-card" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cloudinary_url_internal(main_photo.path, width: 800, height: 600) %>')">
     <%#= link_to "", office_path(booking.office), class: "booking-card-link" %>
     <div class="booking-card-category">
-      <h2><%= booking.office.city %></h2>
+      <h2><%= booking.office.city[0,12] %></h2>
     </div>
     <div class="booking-card-description">
       <h4><small>From</small> <%= booking.date_from %> <small>To</small> <%= booking.date_to %></h4>

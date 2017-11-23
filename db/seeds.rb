@@ -193,7 +193,6 @@ booking = Booking.create!(
   :date_to => '10.11.2018',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o_five.id,
   :user_id => u_one_demander.id,
   )

@@ -1,20 +1,22 @@
 .speech-bubble {
   position: relative;
-  background: #00aabb;
+  background: #EF476F;
   border-radius: .4em;
+  margin: 5px 5px auto;
+  width: 100%;
 }
 
 .speech-bubble:after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  left: 0;
+  top: 50%;
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-top-color: #00aabb;
-  border-bottom: 0;
+  border-right-color: #EF476F;
   border-left: 0;
+  border-bottom: 0;
   margin-left: -10px;
   margin-bottom: -20px;
 }
@@ -24,7 +26,7 @@
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
-  border-bottom: 5px solid #00A699;
+  border-bottom: 5px solid #F2BB05;
   text-decoration: none;
   color: black;
 }
@@ -53,12 +55,14 @@
   font-weight: lighter;
   opacity: 0.6;
   margin-top: 5px;
-
 }
 .message-body {
   padding-left: 10px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);
+  a {
+    color: #E8EFF2;
+  }
 }
 .message-body {
   padding-left: 20px;
@@ -82,7 +86,7 @@
   color: red;
 }
 .status.pending {
-  color: lightgrey;
+  color: #E8EFF2;
 }
 .avatar-large {
   width: 50px;
