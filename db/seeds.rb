@@ -193,7 +193,6 @@ booking = Booking.create!(
   :date_to => '10.11.2018',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o_five.id,
   :user_id => u_one_demander.id,
   )
@@ -203,7 +202,6 @@ booking = Booking.create!(
   :date_to => '09.12.2017',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o_one.id,
   :user_id => u_one_demander.id,
   )
@@ -213,7 +211,6 @@ booking = Booking.create!(
   :date_to => '20.11.2017',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o_three.id,
   :user_id => u_one_demander.id,
   )
@@ -223,7 +220,6 @@ booking = Booking.create!(
   :date_to => '10.11.2017',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o_two.id,
   :user_id => u_one_demander.id,
   )
@@ -233,7 +229,6 @@ booking = Booking.create!(
   :date_to => '10.11.2017',
   :number_people => 10,
   :accepting => true,
-  :note => 'Please non smoking',
   :office_id => o_four.id,
   :user_id => u_one_demander.id,
   )
