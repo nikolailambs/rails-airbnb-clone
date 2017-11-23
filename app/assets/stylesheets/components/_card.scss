@@ -3,9 +3,7 @@
   height: 200px;
   text-shadow: 0 1px 1px rgba(0,0,0,0.1);
   background-size: cover !important;
-
   background-position: center;
-  height: 150px;
   border-radius: 1px;
   margin: 15px 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -38,24 +36,10 @@
   opacity: 0.1;
 }
 
-// .office-card {
-//   background-size: cover;
-//   background-position: center;
-//   color: white;
-//   font-size: 35px;
-//   text-align: center;
-//   padding: 50px;
-//   margin: 10px;
-// }
-
-
-// .office-card:hover {
-// }
-
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  bottom: 0px;
+  left: 0px;
   font-size: 15px;
   text-transform: uppercase;
 }

@@ -3,6 +3,14 @@ $(document).ready(function() {
 });
 
 
+$(document).ready(function() {
+  $(window).scroll(function() {
+    var fromTop = $(document).scrollTop();
+    if ( fromTop > $('.navbar').height() ) $('.navbar-wagon').addClass('minimized');
+    else $('.navbar-wagon').removeClass('minimized');
+  });
+});
+
 // // init Isotope
 // var $grid = $('.grid').isotope({
 //   itemSelector: '.office-card',

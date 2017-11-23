@@ -1,5 +1,5 @@
 
-<div class="container no-margin index-container">
+<div class="no-margin index-container">
   <div class="cards">
 
     <div class="form-inlin">
@@ -71,14 +71,13 @@
               <div class="card-description">
                 <h2><%= office.address %></h2>
                 <div class="price-and-period inline-items">
-                  <p class="price-tag"><%= office.price %></p><p class="period-tag">€ per hour</p>
+                  <p class="price-tag"><%= office.price %>€ per hour</p>
                 </div>
               </div>
               <% if office.user %>
               <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
               <% end %>
               <%= link_to "", office_path(office), class: "card-link" %>
-
             </div>
           </div>
           <% end %>

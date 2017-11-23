@@ -10,6 +10,26 @@
   justify-content: space-between;
 }
 
+/*shrinking navbar*/
+.navbar-wagon.minimized {
+  height: 30px;
+  opacity: 0.9;
+}
+
+.navbar-wagon.minimized li a {
+  line-height: 30px;
+}
+
+.navbar-wagon.minimized .avatar {
+  height: 20px;
+  width: 20px;
+}
+
+.navbar-wagon.minimized img {
+  height: 20px;
+  width: 20px;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
