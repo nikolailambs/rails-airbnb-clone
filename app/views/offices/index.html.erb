@@ -1,34 +1,37 @@
 
-<div class="container no-margin index-container">
+<div class="no-margin index-container">
   <div class="cards">
 
-    <div class="form-groupe form-inlin">
-      <p class="filters-period">
-        <label>
-          <input type="radio" name="filter" value="*" checked="checked" /> hourly
-        </label>
-        <label>
-          <input type="radio" name="filter" value=".daily" /> daily
-        </label>
-        <label>
-          <input type="radio" name="filter" value=".weekly" /> weekly
-        </label>
-        <label>
-          <input type="radio" name="filter" value=".monthly" /> monthly
-        </label>
-        <label>
+    <div class="form-inlin">
+      <div class="form-groupe">
+        <p class="filters-period">
+          <label>
+            <input type="radio" name="filter-one" value="*" checked="checked" /> hourly
+          </label>
+          <label>
+            <input type="radio" name="filter-one" value=".daily" /> daily
+          </label>
+          <label>
+            <input type="radio" name="filter-one" value=".weekly" /> weekly
+          </label>
+          <label>
+            <input type="radio" name="filter-one" value=".monthly" /> monthly
+          </label>
         </p>
-
+      </div>
+      <div class="form-groupe">
         <p class="filters-price">
-          <input type="radio" name="filter" value="100" /> 1€-100€
-        </label>
-        <label>
-          <input type="radio" name="filter" value="500" /> 100€-500€
-        </label>
-        <label>
-          <input type="radio" name="filter" value="1000" /> 500€+
-        </label>
-      </p>
+          <label>
+            <input type="radio" name="filter-tow" value="100" /> 1€-100€
+          </label>
+          <label>
+            <input type="radio" name="filter-tow" value="500" /> 100€-500€
+          </label>
+          <label>
+            <input type="radio" name="filter-tow" value="1000" /> 500€+
+          </label>
+        </p>
+      </div>
     </div>
 
    <!--  <div class="filter-offices">
@@ -58,46 +61,46 @@
             </div>
           </div>
         </div> -->
-
-        <div class="row">
-         <% @offices.each do |office| %>
-         <div class="col-xs-12 col-sm-4">
-          <% main_photo = office.photos[0] %>
-          <div class="office-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
-            <div class="card-category"><%= office.office_type %></div>
-            <div class="card-description">
-              <h2><%= office.address %></h2>
-              <div class="price-and-period inline-items">
-                <p>€ <%= office.price %> per hour</p>
+        <div class="grid">
+          <div class="row">
+           <% @offices.each do |office| %>
+           <div class="col-xs-12 col-sm-4">
+            <% main_photo = office.photos[0] %>
+            <div class="office-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
+              <div class="card-category"><%= office.office_type %></div>
+              <div class="card-description">
+                <h2><%= office.address %></h2>
+                <div class="price-and-period inline-items">
+                  <p class="price-tag"><%= office.price %>€ per hour</p>
+                </div>
               </div>
-            </div>
               <% if office.user %>
               <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
               <% end %>
               <%= link_to "", office_path(office), class: "card-link" %>
-
+            </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
 
     <div id="map" class="index-map"></div>
 
     <% content_for(:after_js) do %>
-        <%= javascript_tag do %>
-        var handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-      handler.getMap().setZoom(14);
-      }
-      });
-      <% end %>
-    <% end %>
+    <%= javascript_tag do %>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+    handler.getMap().setZoom(2);
+  } else if (markers.length == 1) {
+  handler.getMap().setZoom(14);
+}
+});
+<% end %>
+<% end %>
 
 </div>
