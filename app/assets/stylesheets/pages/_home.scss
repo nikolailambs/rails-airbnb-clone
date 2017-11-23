@@ -10,7 +10,6 @@
 }
 
 .search-position {
-
   margin-top: 130px;
   padding-top: 20px;
   height: 300px;
@@ -19,6 +18,37 @@
 
   h1 {
     margin-top: 0;
+
   }
 }
+
+.yellow-grey {
+  color: #26547C;
+  border-radius: 4px;
+  border: 1px solid #C9C9C9;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.search-btn-landing {
+  padding: 5px 15px;
+  &:hover {
+    box-shadow: 0px 0px 2px #26547C;
+    color: #162E44;
+    border-color: #909292;
+    background-color: #E2EBF0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

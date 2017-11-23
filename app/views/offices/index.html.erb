@@ -2,11 +2,11 @@
 <div class="no-margin index-container">
   <div class="cards">
 
-    <div class="form-inlin">
+    <div class="form-inlin filter-card">
       <div class="form-groupe">
         <p class="filters-period">
           <label>
-            <input type="radio" name="filter-one" value="*" checked="checked" /> hourly
+            <input type="radio" name="filter-one" value=".hourly" checked="checked" /> hourly
           </label>
           <label>
             <input type="radio" name="filter-one" value=".daily" /> daily
@@ -22,57 +22,30 @@
       <div class="form-groupe">
         <p class="filters-price">
           <label>
-            <input type="radio" name="filter-tow" value="100" /> 1€-100€
+            <input type="radio" name="filter-two" data-min="1" data-max="100" value="SmallerThan100" /> 1€-100€
           </label>
           <label>
-            <input type="radio" name="filter-tow" value="500" /> 100€-500€
+            <input type="radio" name="filter-two" data-min="100" data-max="500" value="SmallerThan500" /> 100€-500€
           </label>
           <label>
-            <input type="radio" name="filter-tow" value="1000" /> 500€+
+            <input type="radio" name="filter-two" data-min="500" data-max="10000000" value="BigggerThan500" /> 500€+
           </label>
         </p>
       </div>
     </div>
 
-   <!--  <div class="filter-offices">
-      <div class="form-groupe form-inlin">
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Period
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <div class="radio-price">
-                <label class="radio-inline hide-radio"><input type="radio" name="optradio">hourly</label>
-                <label class="radio-inline hide-radio"><input type="radio" name="optradio">daily</label>
-                <label class="radio-inline hide-radio"><input type="radio" name="optradio">weekly</label>
-                <label class="radio-inline hide-radio"><input type="radio" name="optradio">monthly</label>
-              </div>
-            </ul>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Price
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <div class="radio-price">
-                  <label class="radio-inline hide-radio"><input type="radio" name="optradio">1€-100€</label>
-                  <label class="radio-inline hide-radio"><input type="radio" name="optradio">100€-500€</label>
-                  <label class="radio-inline hide-radio"><input type="radio" name="optradio">500€+</label>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </div> -->
         <div class="grid">
           <div class="row">
            <% @offices.each do |office| %>
-           <div class="col-xs-12 col-sm-4">
+           <div class="col-xs-12 col-md-4">
             <% main_photo = office.photos[0] %>
-            <div class="office-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
+            <div class="office-card" data-price="<%= office.price %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
               <div class="card-category"><%= office.office_type %></div>
               <div class="card-description">
-                <h2><%= office.address %></h2>
-                <div class="price-and-period inline-items">
+                <h5><%= office.address %></h5>
+
                   <p class="price-tag"><%= office.price %>€ per hour</p>
-                </div>
+
               </div>
               <% if office.user %>
               <%= image_tag office.user.facebook_picture_url, class: "card-user" %>
