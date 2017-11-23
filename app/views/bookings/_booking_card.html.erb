@@ -3,22 +3,23 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
         <% main_photo = booking.office.photos[0] %>
-        <div class="booking-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag main_photo.path, crop: :fill %>');">
-
-          <div class="card-category"><%= booking.office.city %></div>
-          <div class="card-description">
-            <h4><%= booking.date_from %> - <%= booking.date_to %></h4>
+        <div class="booking-card" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cloudinary_url_internal(main_photo.path, width: 800, height: 600) %>')">
+          <%#= link_to "", office_path(booking.office), class: "booking-card-link" %>
+          <div class="booking-card-category">
+            <h2><%= booking.office.city %></h2>
+          </div>
+          <div class="booking-card-description">
+            <h4><small>From</small> <%= booking.date_from %> <small>To</small> <%= booking.date_to %></h4>
             <h4><%#= booking.office.type %></h4>
             <div class="booking_details">
-              <h4><%= booking.number_people %></h4>
-              <h4 class="accepted">Accepted</h4>
-              <p><%= link_to "Further details", office_path(booking.office) %></p>
+              <h4><small>No. People:</small> <%= booking.number_people %></h4>
+              <h4 class="accepted"><small>Status:</small> Accepted</h4>
+              <h5><%= link_to "Further details", office_path(booking.office) %></h5>
             </div>
           </div>
           <% if booking.office.user %>
-          <%= image_tag booking.office.user.avatar, class: "card-user" %>
+          <%= image_tag booking.office.user.avatar, class: "booking-card-user" %>
           <% end %>
-          <%= link_to "", office_path(booking.office), class: "card-link" %>
         </div>
       </div>
     </div>
