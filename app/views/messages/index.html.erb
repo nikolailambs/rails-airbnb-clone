@@ -4,6 +4,7 @@
     <ul class="inbox">
       <% @messages.each do |message| %>
         <% if message.user_id != message.office.user_id %>
+        <hgroup class="speech-bubble">
           <li class="message">
               <% avatar_url = message.user.facebook_picture_url || message.user.avatar %>
               <%= image_tag avatar_url, class: "avatar-large" %>
@@ -18,6 +19,7 @@
                 </p>
               </div>
           </li>
+        </hgroup>
         <% end %>
       <% end %>
 
