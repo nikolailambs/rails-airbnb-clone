@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @office = Office.find(params[:id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.office = @office
 
     if @booking.save
       redirect_to @booking
