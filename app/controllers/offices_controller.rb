@@ -32,6 +32,7 @@ class OfficesController < ApplicationController
   def create
     @office = Office.new(office_params)
     @office.user = current_user
+
     if @office.save
       redirect_to @office
     else

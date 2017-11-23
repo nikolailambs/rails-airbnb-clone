@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @office = Office.find(params[:id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.office = @office
 
     if @booking.save
       redirect_to @booking
@@ -29,4 +30,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:date_from, :date_to, :number_people)
+  end
 end
