@@ -37,4 +37,3 @@ $('.filters-price, .filters-period').on('click', filters);
 
 
 
-
