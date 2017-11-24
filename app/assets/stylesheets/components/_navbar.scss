@@ -7,13 +7,15 @@
   padding: 0px 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 /*shrinking navbar*/
 .navbar-wagon.minimized {
   height: 30px;
   opacity: 0.9;
+  h2 {
+    display: none;
+  }
 }
 
 .navbar-wagon.minimized li a {
@@ -23,6 +25,7 @@
 .navbar-wagon.minimized .avatar {
   height: 20px;
   width: 20px;
+  float: right;
 }
 
 .navbar-wagon.minimized img {
@@ -40,10 +43,12 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  float: left;
 }
 
 /* Right section */
 .navbar-wagon-right {
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
