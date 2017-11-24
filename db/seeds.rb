@@ -90,6 +90,7 @@ u_one_provider = User.create!(      # USER PROVIDER !
 
 o_one = Office.create!(
   :size => Faker::Space.distance_measurement,
+  :name => "Office in berlin"
   :address => Faker::Address.street_address,
   :availability => [true, false].sample,
   :city => Faker::Address.city,
@@ -103,6 +104,7 @@ o_one = Office.create!(
 
 o_two = Office.create!(
   :size => Faker::Space.distance_measurement,
+  :name => "Office in berlin"
   :address => Faker::Address.street_address,
   :availability => [true, false].sample,
   :city => Faker::Address.city,
@@ -116,6 +118,7 @@ o_two = Office.create!(
 
 o_three = Office.create!(
   :size => Faker::Space.distance_measurement,
+  :name => "Office in berlin"
   :address => Faker::Address.street_address,
   :availability => [true, false].sample,
   :city => Faker::Address.city,
@@ -129,6 +132,7 @@ o_three = Office.create!(
 
 o_four = Office.create!(
   :size => Faker::Space.distance_measurement,
+  :name => "Office in berlin"
   :address => Faker::Address.street_address,
   :availability => [true, false].sample,
   :city => Faker::Address.city,
@@ -142,6 +146,7 @@ o_four = Office.create!(
 
 o_five = Office.create!(
   :size => Faker::Space.distance_measurement,
+  :name => "Office in berlin"
   :address => Faker::Address.street_address,
   :availability => [true, false].sample,
   :city => Faker::Address.city,

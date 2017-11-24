@@ -10,35 +10,35 @@
       <%= form_for(:search, url: offices_path, method: :get) do |f| %>
       <i class="fa fa-search magnifying-glass" aria-hidden="true"></i>
         <%= f.text_field :address_search, label: "Address", placeholder: "Friedrichstr. 24, Berlin", class: "blue-grey search-input" %>
-        <%= f.select :size_search, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" }, class: "blue-grey" %>
+        <%= f.select :size_search, [["1 Person"], ["1-10 Persons"], ["10-50 Persons"], ["50-100 Persons"]], { label: "Choose your favorite fruit:" }, class: "blue-grey person-selector" %>
         <%= f.submit 'Search', class: "yellow-btn search-btn-landing" %>
       <% end %>
     </div>
   </div>
 </div>
 
- <div class="wrapper  margin-symbols">
+ <div class="wrapper  margin-symbols landing-icon">
     <div class="container text-center">
       <div class="row">
         <div class="col-xs-12 col-md-3">
-          <img src="images/summer_color-06.png" alt="">
-          <h4>Discover the world</h4>
-          <p>How cool is that?!</p>
+          <%= image_tag "briefcase.png", class: "landing-icon briefcase" %>
+          <h4>Productivity</h4>
+          <p>Work more productive then ever.</p>
         </div>
         <div class="col-xs-12 col-md-3">
-          <img src="images/summer_color-02.png" alt="">
-          <h4>Ice-cream</h4>
-          <p>Eat ice-cream all day.</p>
+          <%= image_tag "heart.png", class: "landing-icon" %>
+          <h4>People</h4>
+          <p>Work with people you love.</p>
         </div>
         <div class="col-xs-12 col-md-3">
-          <img src="images/beer.png" alt="">
-          <h4>Get drunk</h4>
-          <p>Discover new culture and lifestyle.</p>
+        <%= image_tag "dollar.png", class: "landing-icon" %>
+          <h4>Money</h4>
+          <p>Earn money by renting space you don't need.</p>
         </div>
         <div class="col-xs-12 col-md-3">
-          <img src="images/heart.png" alt="">
-          <h4>Share and love</h4>
-          <p>Join a community you will love.</p>
+          <%= image_tag "beer.png", class: "landing-icon" %>
+          <h4>Cultures</h4>
+          <p>Experience many different cultures.</p>
         </div>
       </div>
     </div>

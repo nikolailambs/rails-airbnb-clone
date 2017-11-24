@@ -1,5 +1,4 @@
 
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @office.photos.first.path, height: 300, width: 400, crop: :fill %>');">
 
   <div class="banner-description">
@@ -49,6 +48,12 @@
 </div>
 
 
+<!-- alert when booked -->
+<% if !@office.availability %>
+  <div class="booking-alert text-center">
+    <h4>You have booked this office from the </h4>
+  </div>
+<% end %>
 
 <!-- Booking Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

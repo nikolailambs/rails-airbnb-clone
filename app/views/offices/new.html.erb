@@ -3,33 +3,40 @@
 <h2 class='navbar-wagon-center text-center'>Add a new office</h2>
 <% end %>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
-      <div class="new-office-page">
-        <%= simple_form_for(@office, :defaults => { :input_html => { :class => "blue-grey" } }) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :description  %>
-          <%= f.input :address, label: "What is the address of the office?" %>
-          <%= f.input :city, label: "In which city is the office located" %>
-          <%= f.input :size, collection: ["1 Person", "1-10 Persons", "10-50 Persons", "50-100 Persons"], label: "What is the capacity of your office?" %>
-          <%= f.input :office_type, collection: ["Co-working Space", "Private Rooms", "Team Rooms", "Open office", "Work lounge"] %>
-          <div class="price-div form-inline">
-            <%= f.input :price %>
-            <p>per</p>
-            <%= f.select :period, collection: ["Hour", "Day", "Week", "Month"] %>
+<div class="background-new-office">
+  <div class="container">
+    <div class="white-background-office">
+      <div class="row">
+        <div class="col-xs-4">
+          
+          <div class="new-office-page">
+            <%= simple_form_for(@office, :defaults => { :input_html => { :class => "blue-grey" } }) do |f| %>
+              <%= f.input :name %>
+              <%= f.input :description  %>
+              <%= f.input :address, label: "What is the address of the office?" %>
+              <%= f.input :city, label: "In which city is the office located" %>
+              <%= f.input :size, collection: ["1 Person", "1-10 Persons", "10-50 Persons", "50-100 Persons"], label: "What is the capacity of your office?" %>
+              <%= f.input :office_type, collection: ["Co-working Space", "Private Rooms", "Team Rooms", "Open office", "Work lounge"] %>
+              
+              <div class="price-div form-inline">
+                <%= f.input :price %>
+                <h4 id="per-new">per</h4>
+                <%= f.select :period, collection: ["Hour", "Day", "Week", "Month"]%>
+              </div>
+            
+              <%= f.input :facility_standard  %>
+            
+              <div class="availability-div">
+                <%= f.input :available_from, as: :string, input_html: { class: 'datepicker' } %>            <%= f.input :available_to, as: :string, input_html: { class: 'datepicker' } %>
+              </div>
+            
+              <%= f.input :photos, as: :attachinary %>
+              <%= f.button :submit, "Create Office", class: "yellow-btn" %>
+            <% end %>
           </div>
-          <%= f.input :facility_standard  %>
-          <div class="availability-div">
-            <%= f.input :available_from, as: :string, input_html: { class: 'datepicker' } %>            <%= f.input :available_to, as: :string, input_html: { class: 'datepicker' } %>
-          </div>
-          <%= f.input :photos, as: :attachinary %>
-          <%= f.submit %>
-        <% end %>
+          
+        </div>
       </div>
-
     </div>
   </div>
 </div>
-

@@ -33,6 +33,8 @@ $(document).ready(function() {
 
 $('.filters-price, .filters-period').on('click', filters);
 
+
+
 });
 
 

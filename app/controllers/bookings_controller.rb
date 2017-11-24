@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def index
     @bookings = Booking.all
   end
@@ -13,9 +14,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.office = @office
 
-
-
     if @booking.save
+      @office.availability = false
+      @office.save
       redirect_to bookings_path
     else
       redirect_to office_path(@office, booking: booking_params)
