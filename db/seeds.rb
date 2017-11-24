@@ -89,10 +89,13 @@ u_one_provider = User.create!(      # USER PROVIDER !
   )
 
 o_one = Office.create!(
-  :size => Faker::Space.distance_measurement,
-  :name => "Office in berlin"
+  :name => Faker::Name.first_name,
+  :office_type => "Co-working Space",
+  :size => "1-10 Persons",
   :address => Faker::Address.street_address,
-  :availability => [true, false].sample,
+  :availability => true,
+  :available_from => Faker::Date.forward(1),
+  :available_to => Faker::Date.forward(50),
   :city => Faker::Address.city,
   :price => Faker::Number.decimal(2),
   :description => Faker::Lorem.sentence,
@@ -103,38 +106,47 @@ o_one = Office.create!(
  )
 
 o_two = Office.create!(
-  :size => Faker::Space.distance_measurement,
-  :name => "Office in berlin"
+  :name => Faker::Name.first_name,
+  :office_type  => "Private Rooms",
+  :size => "1 Person",
   :address => Faker::Address.street_address,
-  :availability => [true, false].sample,
+  :availability => true,
+  :available_from => Faker::Date.forward(1),
+  :available_to => Faker::Date.forward(50),
   :city => Faker::Address.city,
   :price => Faker::Number.decimal(2),
   :description => Faker::Lorem.sentence,
-  :facility_standard => 'premium',
+  :facility_standard => 'budget',
   :period => Faker::Date.forward(23),
   :user_id => u_one_provider.id,
   :photo_urls => ['https://i.pinimg.com/736x/74/5f/39/745f393c1adb66378e731cf036cb5ada--modern-office-design-interior-glass-office-design.jpg', 'https://s7d4.scene7.com/is/image/roomandboard/parsons_189554_17e_g?$str_g$&size=760,480&scl=1', 'https://www.trabahomes.com/wp-content/uploads/2016/10/Astonishing-Swivel-Chair-Coupled-with-Minimalist-Modern-Office-Desk-Completed-with-Curved-Table-Lamp.jpg'],
  )
 
 o_three = Office.create!(
-  :size => Faker::Space.distance_measurement,
-  :name => "Office in berlin"
+  :name => Faker::Name.first_name,
+  :office_type => "Open office",
+  :size => "10-50 Persons",
   :address => Faker::Address.street_address,
-  :availability => [true, false].sample,
+  :availability => true,
+  :available_from => Faker::Date.forward(1),
+  :available_to => Faker::Date.forward(50),
   :city => Faker::Address.city,
   :price => Faker::Number.decimal(2),
   :description => Faker::Lorem.sentence,
-  :facility_standard => 'premium',
+  :facility_standard => 'luxury',
   :period => Faker::Date.forward(23),
   :user_id => u_one_provider.id,
   :photo_urls => ['https://evermotion.org/files/tutorials_content/uploads/1_AI33_005_PP_copy.jpg', 'https://s7d4.scene7.com/is/image/roomandboard/parsons_189554_17e_g?$str_g$&size=760,480&scl=1', 'https://www.trabahomes.com/wp-content/uploads/2016/10/Astonishing-Swivel-Chair-Coupled-with-Minimalist-Modern-Office-Desk-Completed-with-Curved-Table-Lamp.jpg'],
  )
 
 o_four = Office.create!(
-  :size => Faker::Space.distance_measurement,
-  :name => "Office in berlin"
+  :name => Faker::Name.first_name,
+  :office_type  => "Team Rooms",
+  :size => "50-100 Persons",
   :address => Faker::Address.street_address,
-  :availability => [true, false].sample,
+  :availability => true,
+  :available_from => Faker::Date.forward(1),
+  :available_to => Faker::Date.forward(50),
   :city => Faker::Address.city,
   :price => Faker::Number.decimal(2),
   :description => Faker::Lorem.sentence,
@@ -145,10 +157,13 @@ o_four = Office.create!(
  )
 
 o_five = Office.create!(
-  :size => Faker::Space.distance_measurement,
-  :name => "Office in berlin"
+  :name => Faker::Name.first_name,
+  :office_type  => "Work lounge",
+  :size => "1-10 Persons",
   :address => Faker::Address.street_address,
-  :availability => [true, false].sample,
+  :availability => true,
+  :available_from => Faker::Date.forward(1),
+  :available_to => Faker::Date.forward(50),
   :city => Faker::Address.city,
   :price => Faker::Number.decimal(2),
   :description => Faker::Lorem.sentence,
