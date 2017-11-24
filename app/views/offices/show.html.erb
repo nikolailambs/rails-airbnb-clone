@@ -95,22 +95,18 @@
 
       <div id="map" class="office-map"></div>
 
-      <% content_for(:after_js) do %>
-          <%= javascript_tag do %>
-          <%= render 'shared/map_styles' %>
-          var handler = Gmaps.build('Google');
-          handler.buildMap({ provider: { styles: styles }, internal: { id: 'map' } }, function() {
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-        }
-        });
+      <div id="reviews">
+        <h4>Reviews</h4>
+        <% if @office.reviews.blank? %>
+         <p class="first-review"> Be the first to leave a review for <%= @office.user.first_name %></p>
+        <% else %>
+          <% @office.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <%= render 'reviews/form', office: @office, review: @review %>
+
   </div>
     <div class="col-xs-12 col-md-5 booking-column">
       <div class="office-booking">
@@ -141,4 +137,20 @@
 <% end %>
 <% end %>
 
+<% content_for(:after_js) do %>
+          <%= javascript_tag do %>
+          <%= render 'shared/map_styles' %>
+          var handler = Gmaps.build('Google');
+          handler.buildMap({ provider: { styles: styles }, internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+        }
+        });
+  <% end %>
+<% end %>
 

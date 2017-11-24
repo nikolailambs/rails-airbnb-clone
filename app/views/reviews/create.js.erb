@@ -1,0 +1,10 @@
+
+
+const newReviewForm = document.getElementById('new_review');
+<% if @review.errors.any? %>
+  newReviewForm.innerHTML = "<%= j render 'reviews/form', office: @office, review: @review %>";
+<% else %>
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML("beforeend", "<%= j render 'reviews/show', review: @review %>");
+  newReviewForm.innerHTML = "<%= j render 'reviews/form', office: @office, review: Review.new %>";
+<% end %>

@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
     @booking.office = @office
 
 
+
     if @booking.save
       redirect_to bookings_path
     else

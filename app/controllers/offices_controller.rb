@@ -18,6 +18,11 @@ class OfficesController < ApplicationController
       @offices = Office.all
     end
 
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
     @hash = Gmaps4rails.build_markers(@offices) do |office, marker|
       marker.lat office.latitude
       marker.lng office.longitude
@@ -30,6 +35,12 @@ class OfficesController < ApplicationController
     @office = Office.find(params[:id])
     @message = Message.new
     @booking = Booking.new
+    @review = Review.new
+      respond_to do |format|
+        format.html
+        format.js
+        format.json
+      end
 
     if params[:booking]
       @booking.attributes = booking_params
