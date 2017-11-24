@@ -1,5 +1,5 @@
-<%= simple_form_for [@office, @message] do |f| %>
-  <%= f.input :reply, as: :boolean, include_hidden: true %>
+<%= simple_form_for [message.office, Message.new] do |f| %>
+  <%= f.hidden_field :reply, as: :boolean, value: true %>
   <%= f.input :title %>
   <%= f.input :content %>
   <%=f.hidden_field :office_id, value: message.office_id %>
