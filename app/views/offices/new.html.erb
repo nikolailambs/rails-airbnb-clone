@@ -1,6 +1,6 @@
 
 <% content_for(:navbar_title) do %>
-<h2 class='navbar-wagon-center'>Add a new office you want to rent</h2>
+<h4 class="navbar-title">Add a new office you want to rent</h4>
 <% end %>
 
 
@@ -22,8 +22,7 @@
           </div>
           <%= f.input :facility_standard  %>
           <div class="availability-div">
-            <%= f.input :available_from  %>
-            <%= f.input :available_to  %>
+            <%= f.input :available_from, as: :string, input_html: { class: 'datepicker' } %>            <%= f.input :available_to, as: :string, input_html: { class: 'datepicker' } %>
           </div>
           <%= f.input :photos, as: :attachinary %>
           <%= f.submit %>
