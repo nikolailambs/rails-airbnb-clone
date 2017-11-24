@@ -1,4 +1,4 @@
 <%= simple_form_for [office, review], remote: true do |f| %>
     <%= f.input :content, as: :text %>
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Add review', class: "yellow-btn" %>
 <% end %>

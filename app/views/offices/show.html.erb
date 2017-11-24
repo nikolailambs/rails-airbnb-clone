@@ -100,8 +100,8 @@
 
       <div id="map" class="office-map"></div>
 
-      <div id="reviews">
-        <h4>Reviews</h4>
+      <h4 class="headline-reviews">Reviews</h4>
+      <div id="reviews" class="review-show">
         <% if @office.reviews.blank? %>
          <p class="first-review"> Be the first to leave a review for <%= @office.user.first_name %></p>
         <% else %>

@@ -1,3 +1,20 @@
+.container {
+  margin-top: 70px;
+  width: 80%;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.messgae-row {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    li {
+    vertical-align : middle;
+  }
+}
+
 .speech-bubble {
   position: relative;
   background: #EF476F;
@@ -42,16 +59,6 @@
   margin-bottom: -20px;
 }
 
-.tabs {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  border-bottom: 5px solid #F2BB05;
-  text-decoration: none;
-  color: black;
-}
 .message {
   display: flex;
   align-items: center;
@@ -184,4 +191,22 @@ div.bhoechie-tab-content{
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
+}
+
+.yellow-btn-messages {
+  background-color: #F2BB05;
+  margin-left: 30px;
+  bottom: 50%;
+  position: relative;
+  font-weight: bold;
+  color: black;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.yellow-btn-messages:hover {
+  background-color: #F2BB05;
+  opacity: 0.6;
+  box-shadow: 0 0 2px #4D4D4D;
+  color: white;
 }
