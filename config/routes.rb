@@ -4,14 +4,13 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :bookings, except: [:new] do
-    resources :reviews, only: [:create]
-  end
-
   resources :messages, only: [:index, :new, :create, :show, :destroy]
+
+  resources :bookings, only: [:index]
 
   resources :offices do
     resources :bookings, only: [:create]
+    resources :reviews, only: :create
   end
 
   root to: 'pages#home'
