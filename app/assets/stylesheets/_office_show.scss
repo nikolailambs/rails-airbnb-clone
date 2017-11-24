@@ -1,39 +1,128 @@
+
+.office-booking {
+  border: 1px solid #C9C9C9;
+  border-radius: 4px;
+  padding: 50px 20px;
+  background-color: rgba(250, 250, 250, 0.8);
+}
+
 .booking-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#myCarousel {
+  // height: 250px;
+  // width: 80%;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.booking_people {
   display: flex;
   justify-content: space-between;
 }
 
-.booking-form {
-  background-color: white;
-  height: 200px;
-  width: 600px;
-  text-align: center;
+// row CSS
+
+.top-buffer {
+  margin-top: 100px;
+  position:relative
+}
+
+//banner CSS
+
+.banner {
+  height: 550px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.banner-description {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  text-transform: uppercase;
+}
+.banner-description h2 {
+  font-size: 24px;
+}
+.banner-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.banner-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+  transition: background 0.3s ease;
+}
+.banner-link:hover {
+  opacity: 0.1;
+}
+
+.btn-banner {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: black;
+  font-size: 14px;
 }
 
 
-#myCarousel {
-  height: 300px;
-  width: 400px;
-  margin: 40px;
+// office booking CSS
+
+.booking-column {
+  position: sticky !important;
+  top: 50px !important;
+  margin-top: 50px;
 }
 
-
-.carousel-indicators {
-  bottom: -300px;
+.office-column {
+  margin-top: 50px;
 }
 
-
-#map-show {
-  height: 300px;
-  width: 400px;
+.office-column > h2 {
+  margin: 0
 }
 
-
-.booking_people {
-  display: flex;
-  justify-content: space-around;
+.office-map {
+  margin: 50px 0px;
+  height: 400px;
 }
 
-.office_overview {
-  margin-bottom: 100px;
+.yellow-btn {
+  background-color: #F2BB05;
+  font-weight: bold;
+  color: black;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.yellow-btn:hover {
+  background-color: #F2BB05;
+  opacity: 0.6;
+  box-shadow: 0 0 2px #4D4D4D;
+  color: white;
+}
+
+.no-border {
+  border: none;
+}
+
+.booking-btn {
+  padding: 10px 20px;
+  margin: 5px;
 }

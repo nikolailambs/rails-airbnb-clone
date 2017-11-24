@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = Booking.all
   end
 
   def show
@@ -7,14 +8,16 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @office = Office.find(params[:id])
+    @office = Office.find(params[:office_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.office = @office
+
 
     if @booking.save
-      redirect_to @booking
+      redirect_to bookings_path
     else
-      render office_path(@office)
+      redirect_to office_path(@office, booking: booking_params)
     end
   end
 
@@ -26,7 +29,4 @@ class BookingsController < ApplicationController
 
   def destroy
   end
-
-  def booking_params
-    params.require(:booking).permit(:date_from, :date_to, :number_people)
 end

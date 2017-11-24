@@ -1,1 +1,45 @@
-show.html.erb
+<div class ="container">
+  <h2> Mesage history </h2>
+  <div class="tabs"> Exchange </div>
+    <ul class="inbox">
+      <li class="message">
+        <% avatar_url = @message.office.user.facebook_picture_url || @message.office.user.avatar %>
+        <%= image_tag avatar_url, class: "avatar-large" %>
+        <div class="message-name">
+          <% @message.office.messages do |message| %>
+
+          <% message.user.user_name %>
+          <p><%= message.created_at.strftime("%Y-%m-%d") %></p>
+        </div>
+        <hgroup class="speech-bubble">
+          <div class="message-body">
+            <p><strong> <%= message.title %></strong></p> <!-- message header -->
+            <p>
+              <%= message.content %> <!-- message first line -->
+            </p>
+            <% end %>
+          </div>
+        </hgroup>
+      </li>
+
+      <li class="message">
+        <% avatar_url = @message.user.facebook_picture_url || @message.user.avatar %>
+         <%= image_tag avatar_url, class: "avatar-large" %>
+         <div class="message-name">
+          <% @message.user.messages do |message| %>
+          <% message.user.user_name %>
+          <p><%=message.created_at.strftime("%Y-%m-%d") %></p>
+        </div>
+        <hgroup class="speech-bubble">
+          <div class="message-body">
+            <p><strong> <%= message.title %></strong></p> <!-- message header -->
+            <p>
+              <%= message.content %> <!-- message first line -->
+            </p>
+            <% end %>
+          </div>
+        </hgroup>
+      </li>
+    </ul>
+  </div>
+</div>

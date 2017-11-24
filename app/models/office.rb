@@ -12,6 +12,18 @@ class Office < ApplicationRecord
   def full_address
     [address, city].join(', ')
   end
+
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :size, presence: true
+  validates :office_type, presence: true
+  validates :facility_standard, presence: true
+  validates :available_from, presence: true
+  validates :available_to, presence: true
+  validates :period, presence: true
+  validates :photos, presence: true
 end
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122110921) do
+ActiveRecord::Schema.define(version: 20171123142212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,7 @@ ActiveRecord::Schema.define(version: 20171122110921) do
     t.date "date_from"
     t.date "date_to"
     t.integer "number_people"
-    t.boolean "accepting"
-    t.string "note"
+    t.boolean "accepting", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["office_id"], name: "index_bookings_on_office_id"
@@ -66,7 +65,7 @@ ActiveRecord::Schema.define(version: 20171122110921) do
     t.integer "price_per_day"
     t.integer "price_per_week"
     t.integer "price_per_month"
-    t.string "description"
+    t.text "description"
     t.string "facility_standard"
     t.string "pictures"
     t.date "available_from"
@@ -78,6 +77,7 @@ ActiveRecord::Schema.define(version: 20171122110921) do
     t.string "period"
     t.float "latitude"
     t.float "longitude"
+    t.string "name"
     t.index ["user_id"], name: "index_offices_on_user_id"
   end
 

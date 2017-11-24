@@ -7,18 +7,20 @@
       <% @messages.each do |message| %>
         <% if message.user_id != message.office.user_id %>
           <li class="message">
-              <% avatar_url = message.user.facebook_picture_url || "http://placehold.it/30x30" %>
+              <% avatar_url = message.user.facebook_picture_url || message.user.avatar %>
               <%= image_tag avatar_url, class: "avatar-large" %>
               <div class="message-name">
                 <h3><%= message.user.user_name %></h3> <!-- sender -->
                 <p><%= message.created_at.strftime("%Y-%m-%d") %></p>
               </div>
+            <hgroup class="speech-bubble">
               <div class="message-body">
                 <p><strong> <%= message.title %></strong></p> <!-- message header -->
                 <p>
                   <%= link_to message.content[0,20] + "...", message_path(message) %> <!-- message first line -->
                 </p>
               </div>
+            </hgroup>
           </li>
         <% end %>
       <% end %>
