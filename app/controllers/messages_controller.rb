@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :destroy]
 
   def index
+
     @messages = Message.all
     #@messages.users.build # user model
 
