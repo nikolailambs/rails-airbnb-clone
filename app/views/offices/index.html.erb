@@ -48,7 +48,7 @@
           <div class="card-category"><%= office.office_type %></div>
           <div class="card-description">
             <h5><%= office.address %></h5>
-            <p class="price-tag"><%= office.price %>€ per hour</p>
+            <p class="price-tag"><%= office.price %>€ per <%= office.period %></p>
           </div>
           <% if office.user %>
           <% avatar_url = office.user.facebook_picture_url || office.user.avatar %>
