@@ -3,6 +3,7 @@ class Office < ApplicationRecord
   has_attachments :photos, maximum: 5
   has_many :bookings
   has_many :messages
+  has_many :reviews
   has_many :receive_messages, through: :messages, source: :user
   has_many :user_bookings, through: :bookings, source: :user
 
