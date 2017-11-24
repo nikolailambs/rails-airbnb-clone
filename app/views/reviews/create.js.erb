@@ -5,6 +5,8 @@ const newReviewForm = document.getElementById('new_review');
   newReviewForm.innerHTML = "<%= j render 'reviews/form', office: @office, review: @review %>";
 <% else %>
   const reviews = document.getElementById('reviews');
+  const reviewTitle = document.querySelector('.first-review');
   reviews.insertAdjacentHTML("beforeend", "<%= j render 'reviews/show', review: @review %>");
   newReviewForm.innerHTML = "<%= j render 'reviews/form', office: @office, review: Review.new %>";
+  reviewTitle.innerHTML = "";
 <% end %>

@@ -1,2 +1,14 @@
-<p><%= review.content %></p>
 
+
+<div class="review-message">
+  <p class="review-user-title">
+    <% if review.user %>
+      <% avatar_url = review.user.facebook_picture_url || review.user.avatar %>
+      <%= image_tag avatar_url, class: "review-avatar-photo" %>
+    <% end %>
+    <%= review.user.first_name %>:
+  </p>
+    <div class="show-review-field">
+      <p><%= review.content %></p>
+    </div>
+  </div>
