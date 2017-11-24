@@ -17,10 +17,11 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @office = Office.find(params[:office_id])
 
     @message = Message.new(message_params)
-    # @message.office.build # user model
-    # @message.user.build # office model
+    @message.office =  @office # office model
+    @message.user = current_user # user model
 
     if @message.save
       redirect_to messages_path

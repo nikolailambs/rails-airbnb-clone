@@ -1,0 +1,7 @@
+<%= simple_form_for [@office, @message] do |f| %>
+  <%= f.input :reply, as: :boolean, include_hidden: true %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%=f.hidden_field :office_id, value: message.office_id %>
+  <%= f.submit 'Reply', class: 'no-border yellow-btn btn btn-primary btn-lg' %>
+<% end %>

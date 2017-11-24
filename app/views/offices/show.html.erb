@@ -50,7 +50,7 @@
 
 
 
-<!-- Booking Modal-->
+<!-- Message Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -61,12 +61,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @message do |f| %>
-        <%= f.input :title %>
-        <%= f.input :content %>
-        <%=f.hidden_field :office_id, value: @office.id %>
-        <%= f.submit 'Send', class: 'no-border yellow-btn btn btn-primary btn-lg' %>
-      <% end %>
+        <%= simple_form_for [@office, @message] do |f| %>
+          <%= f.input :title %>
+          <%= f.input :content %>
+          <%=f.hidden_field :office_id, value: @office.id %>
+          <%= f.submit 'Send', class: 'no-border yellow-btn btn btn-primary btn-lg' %>
+        <% end %>
       </div>
     </div>
   </div>

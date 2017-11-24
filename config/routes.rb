@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :offices do
     resources :bookings, only: [:create]
+    resources :messages, only: [:create]
   end
 
   root to: 'pages#home'
