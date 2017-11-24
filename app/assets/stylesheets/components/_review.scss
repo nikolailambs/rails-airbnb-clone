@@ -1,0 +1,44 @@
+.headline-reviews {
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.review-user-title {
+  margin-bottom: 1px;
+}
+
+.review-message {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.review-show {
+  margin-bottom: 50px;
+  padding: 30px;
+  border: 1px solid #C9C9C9;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.show-review-field {
+  border: 1px solid #909292;
+  background-color: #909292;
+  border-radius: 10px;
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: #26547C;
+  }
+}
+
+.review_content {
+  margin-top: 30px;
+}
+
+.review-avatar-photo {
+  border-radius: 50%;
+  width: 25px;
+}
