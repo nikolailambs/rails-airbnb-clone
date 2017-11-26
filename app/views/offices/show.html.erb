@@ -51,7 +51,7 @@
 <!-- alert when booked -->
 <% if !@office.availability %>
   <div class="booking-alert text-center">
-    <h4>You have booked this office from the </h4>
+    <h4>You have booked this office from <%= @office.bookings[0].date_from %> to <%= @office.bookings[0].date_to  %> </h4>
   </div>
 <% end %>
 

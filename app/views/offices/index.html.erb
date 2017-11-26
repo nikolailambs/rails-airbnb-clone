@@ -42,9 +42,9 @@
     <div class="grid">
       <div class="row">
        <% @offices.each do |office| %>
-       <div class="col-xs-12 col-md-4">
+
         <% main_photo = office.photos[0] %>
-        <div class="office-card" data-price="<%= office.price %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
+        <div class="col-xs-12 col-md-4 office-card" data-price="<%= office.price %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path main_photo.path, crop: :fill %>');">
           <div class="card-category"><%= office.office_type %></div>
           <div class="card-description">
             <h5><%= office.address %></h5>
@@ -56,7 +56,7 @@
           <% end %>
           <%= link_to "", office_path(office), class: "card-link" %>
         </div>
-      </div>
+
       <% end %>
     </div>
   </div>
@@ -64,21 +64,21 @@
 
 <div id="map" class="index-map"></div>
 
-<% content_for(:after_js) do %>
-<%= javascript_tag do %>
-<%= render 'shared/map_styles' %>
-var handler = Gmaps.build('Google');
-handler.buildMap({ provider: { styles: styles }, internal: { id: 'map' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
-}
-});
-<% end %>
-<% end %>
+  <% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    <%= render 'shared/map_styles' %>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ provider: { styles: styles }, internal: { id: 'map' } }, function() {
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+    handler.getMap().setZoom(2);
+    } else if (markers.length == 1) {
+    handler.getMap().setZoom(14);
+    }
+    });
+    <% end %>
+  <% end %>
 
 </div>

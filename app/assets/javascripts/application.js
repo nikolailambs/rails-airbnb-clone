@@ -24,19 +24,17 @@ $(document).ready(function() {
  $('.office-card').each(function(i, element){
   const price = $(element).data('price');
 
-   if(price >= min && price <= max)
+   if(price >= min && price <= max) {
       $(element).show();
-    else
+   } else {
       $(element).hide();
+   }
   });
 }
 
 $('.filters-price, .filters-period').on('click', filters);
 
-
-
 });
-
 
 $(document).ready(function() {
   $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
@@ -48,4 +46,5 @@ $(document).ready(function() {
     $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
   });
 });
+
 
